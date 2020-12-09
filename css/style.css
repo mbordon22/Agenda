@@ -1,0 +1,241 @@
+/*Custom Properties*/
+:root{
+    --primario: #c2185b;
+    --secundario: #ffc107;
+    --primarioOscuro: #570324;
+    --secundarioOscuro: #7e5f01;
+
+    --fuentePrimaria: 'Poppins', sans-serif;
+    --fuenteSecundaria: 'Arial', Helvetica, sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    background-color: var(--primario);
+}
+
+.contenedor{
+    max-width: 1100px;
+    margin: 0 auto;    
+}
+.bg-amarillo{
+    background-color: var(--secundario);
+}
+.bg-blanco{
+    background-color: white;
+}
+.sombra{
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+h1, h2{
+    font-family: var(--fuenteSecundaria);
+    text-align: center;
+    margin: 0;
+}
+h1{
+    padding: 20px;
+    color: white;
+}
+h2{
+    font-size: 2rem;
+    color: var(--primario);
+}
+.contenedor-barra{
+    background-color: var(--primarioOscuro);
+}
+
+
+/**Botones**/
+.btn{
+    font-size: 2rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-editar{
+    color: var(--secundario);
+}
+.btn-borrar{
+    color: var(--primario);
+}
+.btn-volver{
+    background-color: var(--secundario);
+    padding: 1rem 2rem;
+    display: block;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    text-align: center;
+    color: var(--primario);
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+}
+.btn-volver:hover{
+    background-color: var(--secundarioOscuro);
+    color: white;
+}
+
+/**formulario**/
+form{
+    margin-top: 2rem;
+    padding: 3rem;
+}
+form h4{
+    font-size: 2rem;
+    font-family: var(--fuenteSecundaria);
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+}
+form h4 span{
+    font-size: 1rem;
+    margin-top: 1rem;
+    clear: both;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .campos{
+        display: flex;
+        justify-content: space-between;
+    }
+    .campo{
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+.campo{
+    padding: .5rem 0;
+}
+.campo label{
+    font-size: 1.2rem;
+}
+.campo input[type="text"],
+.campo input[type="tel"]{
+    width: 100%;
+    border: none;
+    padding: .5rem;
+    height: 3rem;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+
+}
+.enviar{
+    display: flex;
+    justify-content: flex-end;
+}
+.enviar input[type="submit"]{
+    flex: 1;
+    background-color: var(--primario);
+    border: none;
+    color: white;
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: background-color .3s ease-in-out;
+}
+.enviar input[type="submit"]:hover{
+    background-color: var(--primarioOscuro);
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .enviar input[type="submit"]{
+        flex: 0 0 auto;
+    }
+}
+
+
+/**Listado contactos**/
+.contactos{
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.contenedor-contactos{
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+}
+.total-contactos{
+    font-family: var(--fuenteSecundaria);
+    color: var(--primario);
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+.total-contactos span{
+    font-size: 3rem;
+    font-weight: 900;
+}
+.buscador{
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    margin: 2rem 0;
+    outline: none;
+}
+.contenedor-tabla{
+    overflow: scroll;
+}
+@media (min-width: 768px) {
+    .contenedor-tabla{
+        overflow: hidden;
+    }
+}
+.listado-contactos{
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+.listado-contactos thead{
+    background-color: var(--primario);
+    color: white;
+    text-transform: uppercase;
+}
+.listado-contactos thead th{
+    padding: 1rem 0;
+}
+.listado-contactos tbody td{
+    padding: .5rem;
+}
+.listado-contactos tbody td:last-child{
+    text-align: center;
+}
+.listado-contactos button{
+    background-color: transparent !important;
+    border: none;
+}
+
+/**PAGINA EDITAR**/
+.d-grid{
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+}
+
+/**Notificacion**/
+
+.notificacion{
+    opacity: 0;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 3rem;
+}
+.visible{
+    opacity: 1;
+}
+.correcto{
+    background-color: rgb(179,241,117);
+    color: green;
+}
+.error{
+    background-color: rgb(238, 148, 166);
+    color: rgb(166, 0, 33);
+}
